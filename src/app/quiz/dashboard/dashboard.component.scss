@@ -1,0 +1,28 @@
+@import '../../../assets/style/_main';
+
+.dashboard {
+  max-width: 600px;
+  margin: 0 auto;
+
+  .current-question-info {
+    background-color: #00BCD4;
+    color: $color-white-base;
+    display: inline-block;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 0 5px;
+    @include border-radius(3px);
+  }
+
+  .nav-options {
+    border-top: 1px solid $color-gray;
+    margin: 10px 0 0;
+    padding: 10px 0 0;
+  }
+
+  .quiz-options {
+    border-top: 1px solid $color-gray;
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+}

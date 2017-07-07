@@ -1,0 +1,30 @@
+@import '../../../assets/style/_main';
+
+.review {
+  padding: 10px 0 0;
+
+  .question {
+    background-color: #EEEEEE;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .score {
+    .response {
+      padding: 20px;
+      margin: 10px 0 20px;
+    }
+
+    .correct {
+      background-color: $color-secondary;
+    }
+
+    .incorrect {
+      background-color: $color-warning;
+    }
+
+    .not-answered {
+      background-color: $color-danger;
+    }
+  }
+}

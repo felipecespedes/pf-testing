@@ -1,0 +1,13 @@
+<div class="question">
+  <h1 [innerHTML]="getStatement()"></h1>
+  <div class="answers grid">
+    <div class="answer column-50" *ngFor="let answer of question?.allAnswers; let i = index">
+      <div class="answer-box grid grid-center">
+        <div class="option">
+          <input [id]="getAnswerId(i)" name="selected_answer" type="radio" [value]="answer" [(ngModel)]="question.selectedAnswer">
+          <label [for]="getAnswerId(i)" [innerHTML]="answer"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

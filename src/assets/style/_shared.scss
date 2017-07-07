@@ -1,0 +1,18 @@
+.button {
+  border: none;
+  background-color: #E0E0E0;
+  cursor: pointer;
+  margin: 0 2px;
+  padding: 10px;
+  @include border-radius(3px);
+
+  &:hover:not(:disabled) {
+    background-color: $color-highlight;
+    color: $color-white-base;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+}

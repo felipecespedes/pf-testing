@@ -1,0 +1,9 @@
+<div class="score">
+  <div class="grid">
+    <div class="column-33 column-top answer" *ngFor="let question of questions" [class.not-answered]="question.selectedAnswer !== question.correctAnswer">
+      <div class="answer-status">
+        <p>{{question.selectedAnswer === question.correctAnswer ? 'Answered' : 'Not Answered'}}</p>
+      </div>
+    </div>
+  </div>
+</div>

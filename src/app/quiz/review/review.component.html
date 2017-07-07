@@ -1,0 +1,25 @@
+<div class="review">
+  <h1>Quiz Result</h1>
+  <div class="question" *ngFor="let question of questions">
+    <h2 [innerHTML]="getStatement(question)"></h2>
+    <div class="grid">
+      <div class="answer column-50" *ngFor="let answer of question?.allAnswers; let i = index">
+        <input type="radio" [value]="answer" [(ngModel)]="question.selectedAnswer" disabled="true">
+        <label [innerHTML]="answer"></label>
+      </div>
+    </div>
+    <div class="score">
+      <div *ngIf="question.selectedAnswer != null; else notAnswered">
+        <div *ngIf="question.selectedAnswer === question.correctAnswer; else incorrect">
+          <p class="response correct">Your answer is correct.</p>
+        </div>
+        <ng-template #incorrect>
+          <p class="response incorrect">Your answer is incorrect.</p>
+        </ng-template>
+      </div>
+      <ng-template #notAnswered>
+        <p class="response not-answered">Not answered.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

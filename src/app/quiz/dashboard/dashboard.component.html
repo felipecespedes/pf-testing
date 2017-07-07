@@ -1,0 +1,25 @@
+<div class="dashboard">
+  <div class="questions" *ngIf="displayMode === displayModes.QUESTIONS">
+    <div *ngIf="questions.length">
+      <p class="current-question-info"><small>Question {{getCurrentQuestionNumber()}} of {{this.questions.length}}.</small></p>
+      <app-question [question]="currentQuestion"></app-question>
+      <div class="nav-options grid grid-justify-center">
+        <button class="button" (click)="goToFirstQuestion()" [disabled]="validateFirstQuestionIndex()">First</button>
+        <button class="button" (click)="goToPreviousQuestion()" [disabled]="validateFirstQuestionIndex()">Prev</button>
+        <button class="button" (click)="goToNextQuestion()" [disabled]="validateLastQuestionIndex()">Next</button>
+        <button class="button" (click)="goToLastQuestion()" [disabled]="validateLastQuestionIndex()">Last</button>
+      </div>
+    </div>
+  </div>
+  <div class="score" *ngIf="displayMode === displayModes.SCORE">
+    <app-score [questions]="questions"></app-score>
+  </div>
+  <div class="review" *ngIf="displayMode === displayModes.RESULTS">
+    <app-review [questions]="questions"></app-review>
+  </div>
+  <div class="quiz-options grid">
+    <button class="button" (click)="restartQuiz()">Quiz</button>
+    <button class="button" (click)="reviewQuiz()" [disabled]=" ! submitted">Review</button>
+    <button class="button" (click)="submitQuiz()">Submit Quiz</button>
+  </div>
+</div>

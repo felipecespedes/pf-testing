@@ -1,0 +1,22 @@
+@import '../../../assets/style/_main';
+
+.score {
+  min-height: 398px;
+  padding: 10px 0 0;
+
+  .answer {
+    padding: 2px 10px;
+
+    .answer-status {
+      padding: 14px 0;
+      background-color: $color-secondary;
+      text-align: center;
+    }
+
+    &.not-answered {
+      .answer-status {
+        background-color: $color-danger;
+      }
+    }
+  }
+}

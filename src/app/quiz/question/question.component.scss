@@ -1,0 +1,21 @@
+@import '../../../assets/style/_main';
+
+.question {
+  min-height: 300px;
+
+  .answer {
+    &:nth-child(even) {
+      padding: 2px 0 2px 10px;
+    }
+
+    &:nth-child(odd) {
+      padding: 2px 10px 2px 0;
+    }
+
+    .answer-box {
+      background-color: $color-primary;
+      height: 60px;
+      padding: 0 10px;
+    }
+  }
+}
